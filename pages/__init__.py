@@ -6,7 +6,6 @@ class BasePage:
 
     def load(self):
         self.browser.get(self.url)
-        # pass
 
     def find_elements(self, by, identifier):
         elements = self.browser.find_elements(by=by, value=identifier)

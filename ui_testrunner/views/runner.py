@@ -4,10 +4,9 @@ from os import environ
 import falcon
 from celery.result import AsyncResult
 
+from ui_testrunner import scenarios
 from ui_testrunner.services.runner import execute_all_scenarios
-from ui_testrunner.tasks import fib, execute_testrunner, execute_all_validations
-import time
-from ui_testrunner import validations
+from ui_testrunner.tasks import fib, execute_testrunner
 
 
 class RunnerView:
@@ -24,7 +23,7 @@ class RunnerView:
         resp.text = json.dumps(result)
 
     def on_get(self, req, resp):
-        task = validations.create_task()
+        task = scenarios.create_task()
         resp.status = falcon.HTTP_200
         result = {
             'status': 'success',
