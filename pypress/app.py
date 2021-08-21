@@ -1,6 +1,6 @@
 import falcon
 
-from ui_testrunner.views.runner import RunnerView, CreateTask, TaskStatusCheck, CheckEnv, SyncRunnerView
+from pypress.views.runner import RunnerView, CreateTask, TaskStatusCheck, CheckEnv, SyncRunnerView
 
 app = application = falcon.App()
 

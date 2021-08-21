@@ -4,9 +4,9 @@ from os import environ
 import falcon
 from celery.result import AsyncResult
 
-from ui_testrunner import scenarios
-from ui_testrunner.services.runner import execute_all_scenarios
-from ui_testrunner.tasks import fib, execute_testrunner
+from pypress import scenarios
+from pypress.services.runner import execute_all_scenarios
+from pypress.tasks import fib, execute_testrunner
 
 
 class RunnerView:

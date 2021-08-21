@@ -4,8 +4,8 @@ from time import sleep
 import celery
 
 from pages.vivadecora.decoracao import DecoracaoPage
-from ui_testrunner.services.browser.services import run_browser
-from ui_testrunner.services.runner import execute_all_scenarios
+from pypress.services.browser.services import run_browser
+from pypress.services.runner import execute_all_scenarios
 
 CELERY_BROKER = os.environ.get('CELERY_BROKER')
 CELERY_BACKEND = os.environ.get('CELERY_BACKEND')

@@ -10,9 +10,9 @@ RUN apt-get update && \
 
 RUN apt-get update; apt-get clean
 
-RUN mkdir /ui_testrunner
-WORKDIR /ui_testrunner
+RUN mkdir /pypress
+WORKDIR /pypress
 RUN pip install pipenv
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --system
-COPY . /ui_testrunner
+COPY . /pypress

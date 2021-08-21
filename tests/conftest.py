@@ -46,7 +46,7 @@ def config_wait_time(config):
 def browser(config_browser, config_wait_time):
     # Initialize WebDriver
     if config_browser == 'chrome':
-        driver = Chrome("/Users/rafaelribeiro/dev_me/ui_testrunner/web-driver/chromedriver")
+        driver = Chrome("/Users/rafaelribeiro/dev_me/pypress_project/web-driver/chromedriver")
     elif config_browser == 'firefox':
         driver = Firefox()
     else:
@@ -67,7 +67,7 @@ def run_browser(config_browser, config_wait_time):
     chromedriver_path = os.path.join(os.getcwd(), 'web-driver', 'chromedriver')
 
     if config_browser == 'chrome':
-        # driver = Chrome("/Users/rafaelribeiro/dev_me/ui_testrunner/web-driver/chromedriver")
+        # driver = Chrome("/Users/rafaelribeiro/dev_me/pypress/web-driver/chromedriver")
         driver = webdriver.Remote("http://selenium:4444/wd/hub", DesiredCapabilities.CHROME)
     elif config_browser == 'firefox':
         driver = Firefox()

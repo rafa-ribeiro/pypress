@@ -3,7 +3,7 @@ from falcon import testing
 import pytest
 import json
 
-from ui_testrunner.app import app
+from pypress.app import app
 
 
 @pytest.fixture

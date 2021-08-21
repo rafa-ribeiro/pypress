@@ -1,9 +1,9 @@
 from typing import Dict, List
 
-from ui_testrunner.services.browser.services import run_browser
-from ui_testrunner.validations import action
-from ui_testrunner.validations import check
-from ui_testrunner.validations import setup
+from pypress.services.browser.services import run_browser
+from pypress.validations import action
+from pypress.validations import check
+from pypress.validations import setup
 
 
 class MockBrowser(object):

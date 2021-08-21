@@ -13,7 +13,7 @@ services:
     image: backend
     container_name: backend
     volumes:
-      - .:/ui_testrunner
+      - .:/pypress
     ports:
       - "8000:8000"
     environment:
@@ -26,9 +26,9 @@ services:
   celery:
     image: backend
     volumes:
-      - .:/ui_testrunner
-      - ./logs:/ui_testrunner/logs
-    command: celery -A ui_testrunner.tasks worker --loglevel=info --logfile=logs/celery.log
+      - .:/pypress
+      - ./logs:/pypress/logs
+    command: celery -A pypress.tasks worker --loglevel=info --logfile=logs/celery.log
     environment:
       - CELERY_BROKER=redis://redis:6379/0
       - CELERY_BACKEND=redis://redis:6379/0
@@ -38,7 +38,7 @@ services:
 
   redis:
     image: redis:6-alpine
-    container_name: redis_ui-testrunner
+    container_name: redis_pypress
     ports:
       - "6379:6379"
 
@@ -46,7 +46,7 @@ services:
     image: backend
     ports:
     - 5555:5555
-    command: flower -A ui_testrunner.tasks --port=5555 --broker=redis://redis:6379/0
+    command: flower -A pypress.tasks --port=5555 --broker=redis://redis:6379/0
     depends_on:
       - backend
       - redis

@@ -1,4 +1,4 @@
-from ui_testrunner.tasks import execute_all_validations
+from pypress.tasks import execute_all_validations
 
 scenarios = [
     {
