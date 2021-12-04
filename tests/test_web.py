@@ -34,6 +34,6 @@ def test_decoracao_page(browser):
 def test_products_list_page(browser):
     products_page = BasePage(browser=browser, url='https://www.vivadecora.com.br/produtos/sofas')
     products_page.load()
-    time.sleep(1)
+    time.sleep(2)
     products_box = products_page.find_elements(by=By.CLASS_NAME, identifier='product-box')
     assert len(products_box) == 64

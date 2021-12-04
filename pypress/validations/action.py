@@ -26,8 +26,8 @@ def wait_for(page, time_in_seconds, *args, **kwargs):
 
 
 available_functions = {
-    'collect_elements': collect_elements,
-    'wait_for': wait_for,
+    'collect_elements': collect_elements,  # type: ignore
+    'wait_for': wait_for,  # type: ignore
 }
 
 

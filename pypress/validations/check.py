@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 from pages import BasePage
 
@@ -18,7 +18,7 @@ available_functions = {
 }
 
 
-def execute_stage(page: BasePage, scenario: Dict, result) -> object:
+def execute_stage(page: BasePage, scenario: Dict, result) -> List:
     checks_results = list()
     check_step = scenario.get('check', None)
     if check_step:

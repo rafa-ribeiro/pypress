@@ -28,7 +28,10 @@ def execute_all_scenarios(scenarios: List):
 
 
 def execute_scenario(browser, scenario: Dict):
+    validations = list()
     page = setup.execute_stage(browser, scenario)
-    result = action.execute_stage(page, scenario)
-    validations = check.execute_stage(page, scenario, result)
+
+    if page:
+        result = action.execute_stage(page, scenario)
+        validations = check.execute_stage(page, scenario, result)
     return validations

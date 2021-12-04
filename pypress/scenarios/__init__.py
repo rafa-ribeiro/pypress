@@ -1,6 +1,6 @@
 from pypress.tasks import execute_all_validations
 
-scenarios = [
+SCENARIOS_LIST = [
     {
         'description': 'Valida que só tem 1 tag h1 na página /decoracao',
         'setup': {
@@ -43,5 +43,5 @@ scenarios = [
 
 
 def create_task():
-    task = execute_all_validations.delay(scenarios=scenarios)
+    task = execute_all_validations.delay(scenarios=SCENARIOS_LIST)
     return task
