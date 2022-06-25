@@ -3,7 +3,7 @@ version: '3'
 services:
   selenium:
     shm_size: '2gb'
-    image: selenium/standalone-chrome
+    image: selenium/standalone-chrome:102.0
     ports:
       - 4444:4444
 
